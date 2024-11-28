@@ -1,32 +1,48 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="card w-100">
-            <div class="card-body">
-                <table class="table table-bordered">
-                    <thead>
-                        <th id="first_parameter">100</th>
-                        <th id="second_parameter">7</th>
-                        <th id="third_parameter">107</th>
-                        <th id="fourth_parameter">3</th>
-                        <th id="fifth_parameter">104</th>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><input type="number" name="" id="first_input"></td>
-                            <td><input type="number" name="" id="second_input"></td>
-                            <td><input type="number" name="" id="third_input"></td>
-                            <td><input type="number" name="" id="fourth_input"></td>
-                            <td><input type="number" name="" id="fifth_input"></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-primary" id="btn_calculate">Calculate</button>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <table class="w-full border-collapse">
+                        <thead>
+                            <tr>
+                                <th id="first_parameter" class="border border-gray-300 bg-gray-100 px-4 py-2 text-gray-700">100</th>
+                                <th id="second_parameter" class="border border-gray-300 bg-gray-100 px-4 py-2 text-gray-700">7</th>
+                                <th id="third_parameter" class="border border-gray-300 bg-gray-100 px-4 py-2 text-gray-700">107</th>
+                                <th id="fourth_parameter" class="border border-gray-300 bg-gray-100 px-4 py-2 text-gray-700">3</th>
+                                <th id="fifth_parameter" class="border border-gray-300 bg-gray-100 px-4 py-2 text-gray-700">104</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="border border-gray-300 p-2"><input type="number" id="first_input" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></td>
+                                <td class="border border-gray-300 p-2"><input type="number" id="second_input" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></td>
+                                <td class="border border-gray-300 p-2"><input type="number" id="third_input" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></td>
+                                <td class="border border-gray-300 p-2"><input type="number" id="fourth_input" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></td>
+                                <td class="border border-gray-300 p-2"><input type="number" id="fifth_input" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="bg-gray-50 px-6 py-4">
+                    <button class="w-full px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out" id="btn_calculate">Calculate</button>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+
+</html>
 
 <script>
     document.getElementById('btn_calculate').addEventListener('click', function() {

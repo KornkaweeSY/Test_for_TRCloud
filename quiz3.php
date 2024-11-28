@@ -23,7 +23,7 @@ foreach ($array_1 as $item_1) {
 }
 
 
-echo json_encode($merged_array);
+// echo json_encode($merged_array);
 ?>
 
 <div class="container-fluid">
