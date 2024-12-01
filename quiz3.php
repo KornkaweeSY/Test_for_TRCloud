@@ -26,33 +26,48 @@ foreach ($array_1 as $item_1) {
 // echo json_encode($merged_array);
 ?>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="card w-100">
-            <div class="card-body">
-                <h1>ตารางแสดงข้อมูล</h1>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Code</th>
-                            <th>Name</th>
-                            <th>City</th>
-                        </tr>
-                    </thead>
-                    <tbody id="table-body">
-                        <?php foreach ($merged_array as $item) : ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body class="bg-gray-100 p-8">
+    <div class="max-w-7xl mx-auto">
+        <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div class="p-6">
+                <h1 class="text-2xl font-bold text-gray-800 mb-6">ตารางแสดงข้อมูล</h1>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full divide-y divide-gray-200 border">
+                        <thead class="bg-blue-100">
                             <tr>
-                                <td><?= $item['code'] ?></td>
-                                <td><?= $item['name'] ?></td>
-                                <td><?= $item['city'] ?></td>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Code</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                                <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">City</th>
                             </tr>
-                        <?php endforeach; ?>
-                    </tbody>
-                </table>
+                        </thead>
+                        <tbody class="bg-white divide-y divide-gray-200">
+                            <?php foreach ($merged_array as $item) : ?>
+                                <tr class="hover:bg-gray-50">
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= $item['code'] ?></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= $item['name'] ?></td>
+                                    <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-900"><?= $item['city'] ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
-</div>
+</body>
+
+</html>
+
 
 <!-- <script>
     function loadTableData() {

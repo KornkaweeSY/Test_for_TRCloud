@@ -1,34 +1,3 @@
-<?php
-/* $city = [];
-$population = [];
-$country = [];
-
-if (isset($_POST['data'])) {
-    $data_1 = [
-        ["City" => "Chongqing", "Population" => "30165500", "Country" => "China"],
-        ["City" => "Shanghai", "Population" => "24183300", "Country" => "China"], 
-        ["City" => "Beijing", "Population" => "21707000", "Country" => "China"],
-        ["City" => "Istanbul", "Population" => "15029231", "Country" => "Turkey"],
-        ["City" => "Karachi", "Population" => "14910352", "Country" => "Pakistan"],
-        ["City" => "Dhaka", "Population" => "14399000", "Country" => "Bangladesh"],
-        ["City" => "Moscow", "Population" => "13200000", "Country" => "Russia"],
-        ["City" => "Guangzhou", "Population" => "13081000", "Country" => "China"],
-        ["City" => "Shenzhen", "Population" => "12528300", "Country" => "China"],
-        ["City" => "Mumbai", "Population" => "12528300", "Country" => "India"]
-    ];
-
-    $city = array_column($data_1, "City");
-    $population = array_column($data_1, "Population");
-    $country = array_column($data_1, "Country");
-}
-
-print_r($city);
-
-echo json_encode(["city" => $city, "population" => $population, "country" => $country]); */
-
-include "./API/quiz4.php";
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,53 +5,161 @@ include "./API/quiz4.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <title>Chart Js</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
 </head>
-
 <body>
-    <div class="container">
-        <h1>Population of the World's Largest Cities</h1>
-        <canvas id="myChart" width="400" height="400"></canvas>
+<div class="container mx-auto p-4 mt-4">
+    <div class="bg-white rounded-lg shadow-lg mb-4">
+        <div class="bg-blue-600 p-4 rounded-t-lg">
+            <h4 class="text-white font-bold">Population Distribution by City</h4>
+        </div>
+        <div class="p-4">
+            <div class="w-full">
+                <div class="relative h-[60vh] w-full flex justify-center items-center">
+                    <canvas id="myChart_1"></canvas>
+                </div>
+            </div>
+        </div>
     </div>
-
+    <div class="bg-white rounded-lg shadow-lg">
+        <div class="bg-blue-600 p-4 rounded-t-lg">
+            <h4 class="text-white font-bold">Population Distribution by City</h4>
+        </div>
+        <div class="p-4">
+            <div class="w-full">
+                <div class="relative h-[60vh] w-full flex justify-center items-center">
+                    <canvas id="myChart_2"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
 
 <script>
-    $(document).ready(function() {
-        $.ajax({
-            url: "./API/quiz4.php",
-            method: "POST",
-            data: {
-                data: true
-            },
-            success: function(data) {
-                const chartData = JSON.parse(data);
+    const ctx_1 = document.getElementById('myChart_1');
+    const ctx_2 = document.getElementById('myChart_2');
 
-                new Chart(document.getElementById('myChart'), {
-                    type: 'bar',
-                    data: {
-                        labels: chartData.city,
-                        datasets: [{
-                            label: 'Population',
-                            data: chartData.population,
-                            backgroundColor: 'rgba(54, 162, 235, 0.5)',
-                            borderColor: 'rgba(54, 162, 235, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        responsive: true,
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
+    /* AJAX */
+    const xmlhttp = new XMLHttpRequest();
+    const url = 'https://www.trcloud.co/test/api.php';
+    /* async */
+    xmlhttp.open('GET', url, true);
+    xmlhttp.send();
+
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            const data = JSON.parse(xmlhttp.responseText);
+            const city = data.map(item => item.City);
+            const populations = data.map(item => item.Population);
+            const countries = data.map(item => item.Country);
+            new Chart(ctx_1, {
+                type: 'bar',
+                data: {
+                    labels: city,
+                    datasets: [{
+                        label: 'Range by country',
+                        data: populations,
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.5)',
+                            'rgba(54, 162, 235, 0.5)',
+                            'rgba(255, 206, 86, 0.5)',
+                            'rgba(75, 192, 192, 0.5)',
+                            'rgba(153, 102, 255, 0.5)',
+                            'rgba(255, 159, 64, 0.5)',
+                            'rgba(199, 199, 199, 0.5)',
+                            'rgba(83, 102, 255, 0.5)',
+                            'rgba(40, 159, 64, 0.5)',
+                            'rgba(210, 199, 199, 0.5)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(199, 199, 199, 1)',
+                            'rgba(83, 102, 255, 1)',
+                            'rgba(40, 159, 64, 1)',
+                            'rgba(210, 199, 199, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    scales: {
+                        y: {
+                            beginAtZero: true
                         }
                     }
-                });
-            }
-        });
-    });
+                }
+            });
+            new Chart(ctx_2, {
+                type: 'polarArea',
+                data: {
+                    labels: city,
+                    datasets: [{
+                        label: 'Population (Millions)',
+                        data: populations.map(p => p/10000000),
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.7)',
+                            'rgba(54, 162, 235, 0.7)', 
+                            'rgba(255, 206, 86, 0.7)',
+                            'rgba(75, 192, 192, 0.7)',
+                            'rgba(153, 102, 255, 0.7)',
+                            'rgba(255, 159, 64, 0.7)',
+                            'rgba(199, 199, 199, 0.7)',
+                            'rgba(83, 102, 255, 0.7)',
+                            'rgba(40, 159, 64, 0.7)',
+                            'rgba(210, 199, 199, 0.7)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(199, 199, 199, 1)',
+                            'rgba(83, 102, 255, 1)',
+                            'rgba(40, 159, 64, 1)',
+                            'rgba(210, 199, 199, 1)'
+                        ],
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: {
+                            position: 'right',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Population Distribution by City (in Millions)',
+                            font: {
+                                size: 16
+                            }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return `${context.label}: ${(context.raw).toFixed(2)} Million`;
+                                }
+                            }
+                        }
+                    },
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true
+                    }
+                }
+            });
+        }
+    }
 </script>
