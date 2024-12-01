@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Quiz 1</title>
 </head>
-
-<body class="bg-gray-100 min-h-screen py-8">
+<body class="bg-gray-100 p-8">
+    <nav class="max-w-7xl mx-auto mb-6">
+        <div class="bg-white rounded-lg shadow-lg">
+            <div class="flex justify-center space-x-4 p-4">
+                <a href="quiz1.php" class="px-4 py-2 bg-blue-700 text-white rounded-lg font-bold">Quiz 1</a>
+                <a href="quiz2.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 2</a>
+                <a href="quiz3.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 3</a>
+                <a href="quiz4.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 4</a>
+            </div>
+        </div>
+    </nav>
     <div class="container mx-auto px-4">
         <div class="max-w-2xl mx-auto">
             <div class="bg-white rounded-lg shadow-lg overflow-hidden">

@@ -21,8 +21,6 @@ foreach ($array_1 as $item_1) {
         }
     }
 }
-
-
 // echo json_encode($merged_array);
 ?>
 
@@ -37,6 +35,16 @@ foreach ($array_1 as $item_1) {
 </head>
 
 <body class="bg-gray-100 p-8">
+    <nav class="max-w-7xl mx-auto mb-6">
+        <div class="bg-white rounded-lg shadow-lg">
+            <div class="flex justify-center space-x-4 p-4">
+                <a href="quiz1.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 1</a>
+                <a href="quiz2.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 2</a>
+                <a href="quiz3.php" class="px-4 py-2 bg-blue-700 text-white rounded-lg font-bold">Quiz 3</a>
+                <a href="quiz4.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 4</a>
+            </div>
+        </div>
+    </nav>
     <div class="max-w-7xl mx-auto">
         <div class="bg-white rounded-lg shadow-lg overflow-hidden">
             <div class="p-6">

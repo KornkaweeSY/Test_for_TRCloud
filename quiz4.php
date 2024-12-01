@@ -1,40 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.tailwindcss.com"></script>
-    <title>Document</title>
+    <title>Quiz 4</title>
 </head>
-<body>
-<div class="container mx-auto p-4 mt-4">
-    <div class="bg-white rounded-lg shadow-lg mb-4">
-        <div class="bg-blue-600 p-4 rounded-t-lg">
-            <h4 class="text-white font-bold">Population Distribution by City</h4>
+<body class="bg-gray-100 p-8">
+    <nav class="max-w-7xl mx-auto mb-6">
+        <div class="bg-white rounded-lg shadow-lg">
+            <div class="flex justify-center space-x-4 p-4">
+                <a href="quiz1.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 1</a>
+                <a href="quiz2.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 2</a>
+                <a href="quiz3.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 3</a>
+                <a href="quiz4.php" class="px-4 py-2 bg-blue-700 text-white rounded-lg font-bold">Quiz 4</a>
+            </div>
         </div>
-        <div class="p-4">
-            <div class="w-full">
-                <div class="relative h-[60vh] w-full flex justify-center items-center">
-                    <canvas id="myChart_1"></canvas>
+    </nav>
+    <div class="container mx-auto p-4 mt-4">
+        <div class="bg-white rounded-lg shadow-lg mb-4">
+            <div class="bg-blue-600 p-4 rounded-t-lg">
+                <h4 class="text-white font-bold">Population Distribution by City</h4>
+            </div>
+            <div class="p-4">
+                <div class="w-full">
+                    <div class="relative h-[60vh] w-full flex justify-center items-center">
+                        <canvas id="myChart_1"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-white rounded-lg shadow-lg">
+            <div class="bg-blue-600 p-4 rounded-t-lg">
+                <h4 class="text-white font-bold">Population Distribution by City</h4>
+            </div>
+            <div class="p-4">
+                <div class="w-full">
+                    <div class="relative h-[60vh] w-full flex justify-center items-center">
+                        <canvas id="myChart_2"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="bg-white rounded-lg shadow-lg">
-        <div class="bg-blue-600 p-4 rounded-t-lg">
-            <h4 class="text-white font-bold">Population Distribution by City</h4>
-        </div>
-        <div class="p-4">
-            <div class="w-full">
-                <div class="relative h-[60vh] w-full flex justify-center items-center">
-                    <canvas id="myChart_2"></canvas>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
 </body>
 
 </html>
