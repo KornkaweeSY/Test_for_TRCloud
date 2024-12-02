@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Quiz 2</title>
 </head>
+
 <body class="bg-gray-100 p-8">
     <nav class="max-w-7xl mx-auto mb-6">
         <div class="bg-white rounded-lg shadow-lg">
@@ -48,49 +50,51 @@
             </div>
         </div>
     </div>
-    <script>
-        document.getElementById('btn_calculate').addEventListener('click', function() {
-            const inputs = [
-                parseFloat(document.getElementById('first_input').value) || null,
-                parseFloat(document.getElementById('second_input').value) || null,
-                parseFloat(document.getElementById('third_input').value) || null,
-                parseFloat(document.getElementById('fourth_input').value) || null,
-                parseFloat(document.getElementById('fifth_input').value) || null
-            ];
-
-            const parameters = [
-                parseFloat(document.getElementById('first_parameter').innerText),
-                parseFloat(document.getElementById('second_parameter').innerText),
-                parseFloat(document.getElementById('third_parameter').innerText),
-                parseFloat(document.getElementById('fourth_parameter').innerText),
-                parseFloat(document.getElementById('fifth_parameter').innerText)
-            ];
-
-            let baseValue = null;
-            let baseIndex = null;
-
-            for (let i = 0; i < inputs.length; i++) {
-                if (inputs[i] !== null) {
-                    baseValue = inputs[i];
-                    baseIndex = i;
-                    break;
-                }
-            }
-
-            if (baseValue !== null) {
-                const results = parameters.map((param, index) => {
-                    return (baseValue / parameters[baseIndex]) * param;
-                });
-
-                document.getElementById('first_input').value = results[0].toFixed(2);
-                document.getElementById('second_input').value = results[1].toFixed(2);
-                document.getElementById('third_input').value = results[2].toFixed(2);
-                document.getElementById('fourth_input').value = results[3].toFixed(2);
-                document.getElementById('fifth_input').value = results[4].toFixed(2);
-            } else {
-                alert('กรุณากรอกค่าลงในช่องใดช่องหนึ่ง!');
-            }
-        });
-    </script>
 </body>
+
 </html>
+
+<script>
+    document.getElementById('btn_calculate').addEventListener('click', function() {
+        const inputs = [
+            parseFloat(document.getElementById('first_input').value) || null,
+            parseFloat(document.getElementById('second_input').value) || null,
+            parseFloat(document.getElementById('third_input').value) || null,
+            parseFloat(document.getElementById('fourth_input').value) || null,
+            parseFloat(document.getElementById('fifth_input').value) || null
+        ];
+
+        const parameters = [
+            parseFloat(document.getElementById('first_parameter').innerText),
+            parseFloat(document.getElementById('second_parameter').innerText),
+            parseFloat(document.getElementById('third_parameter').innerText),
+            parseFloat(document.getElementById('fourth_parameter').innerText),
+            parseFloat(document.getElementById('fifth_parameter').innerText)
+        ];
+
+        let baseValue = null;
+        let baseIndex = null;
+
+        for (let i = 0; i < inputs.length; i++) {
+            if (inputs[i] !== null) {
+                baseValue = inputs[i];
+                baseIndex = i;
+                break;
+            }
+        }
+
+        if (baseValue !== null) {
+            const results = parameters.map((param, index) => {
+                return (baseValue / parameters[baseIndex]) * param;
+            });
+
+            document.getElementById('first_input').value = results[0].toFixed(2);
+            document.getElementById('second_input').value = results[1].toFixed(2);
+            document.getElementById('third_input').value = results[2].toFixed(2);
+            document.getElementById('fourth_input').value = results[3].toFixed(2);
+            document.getElementById('fifth_input').value = results[4].toFixed(2);
+        } else {
+            alert('กรุณากรอกค่าลงในช่องใดช่องหนึ่ง!');
+        }
+    });
+</script>
