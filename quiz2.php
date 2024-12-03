@@ -44,8 +44,9 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="bg-gray-50 px-6 py-4">
-                    <button class="w-full px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out" id="btn_calculate">Calculate</button>
+                <div class="bg-gray-50 px-6 py-4 flex gap-4">
+                    <button class="flex-1 px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition duration-200 ease-in-out" id="btn_calculate">Calculate</button>
+                    <button class="flex-1 px-6 py-2 bg-gray-500 text-white font-semibold rounded-lg hover:bg-gray-600 transition duration-200 ease-in-out" id="btn_clear">Clear</button>
                 </div>
             </div>
         </div>
@@ -55,6 +56,14 @@
 </html>
 
 <script>
+    document.getElementById('btn_clear').addEventListener('click', function() {
+        document.getElementById('first_input').value = '';
+        document.getElementById('second_input').value = '';
+        document.getElementById('third_input').value = '';
+        document.getElementById('fourth_input').value = '';
+        document.getElementById('fifth_input').value = '';
+    });
+
     document.getElementById('btn_calculate').addEventListener('click', function() {
         const inputs = [
             parseFloat(document.getElementById('first_input').value) || null,
