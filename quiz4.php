@@ -15,6 +15,7 @@
                 <a href="quiz2.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 2</a>
                 <a href="quiz3.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 3</a>
                 <a href="quiz4.php" class="px-4 py-2 bg-blue-700 text-white rounded-lg font-bold">Quiz 4</a>
+                <a href="test1.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">test 1</a>
             </div>
         </div>
     </nav>
@@ -62,6 +63,7 @@
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             const data = JSON.parse(xmlhttp.responseText);
+            console.log(data);
             const city = data.map(item => item.City);
             const populations = data.map(item => item.Population);
             const countries = data.map(item => item.Country);

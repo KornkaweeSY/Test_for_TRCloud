@@ -16,6 +16,7 @@
                 <a href="quiz2.php" class="px-4 py-2 bg-blue-700 text-white rounded-lg font-bold">Quiz 2</a>
                 <a href="quiz3.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 3</a>
                 <a href="quiz4.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 4</a>
+                <a href="test1.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">test 1</a>
             </div>
         </div>
     </nav>
@@ -88,12 +89,17 @@
             if (inputs[i] !== null) {
                 baseValue = inputs[i];
                 baseIndex = i;
+                console.log(baseIndex);
                 break;
             }
         }
+        
+        
 
         if (baseValue !== null) {
             const results = parameters.map((param, index) => {
+                console.log(parameters);
+                console.log(param);
                 return (baseValue / parameters[baseIndex]) * param;
             });
 

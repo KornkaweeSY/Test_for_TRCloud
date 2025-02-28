@@ -7,7 +7,7 @@ $array_1 = [
 ];
 
 $array_2 = [
-    ['code' => 101, 'city' => 'Singapore'],
+    ['code' => 105, 'city' => 'Singapore'],
     ['code' => 102, 'city' => 'Bangkok'],
     ['code' => 103, 'city' => 'Tokyo'],
     ['code' => 104, 'city' => 'Seoul'],
@@ -42,6 +42,7 @@ foreach ($array_1 as $item_1) {
                 <a href="quiz2.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 2</a>
                 <a href="quiz3.php" class="px-4 py-2 bg-blue-700 text-white rounded-lg font-bold">Quiz 3</a>
                 <a href="quiz4.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">Quiz 4</a>
+                <a href="test1.php" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition duration-200">test 1</a>
             </div>
         </div>
     </nav>
